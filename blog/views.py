@@ -8,19 +8,16 @@ from django.http import HttpResponse
 
 
 def blog_list(request):
-    return render(request, "blog/list.html")
+    posts = Blog.objects.all()
+    return render(request, 'blog/list.html', {'posts': posts})
 
 def blog_detail(request):
-    return HttpResponse("Hello, world. You're at the blog_detail index.")
 
 
 def blog_new(request):
-    return HttpResponse("Hello, world. You're at the blog_new index.")
 
 
 def blog_edit(request):
-    return HttpResponse("Hello, world. You're at the blog_edit index.")
 
 
 def blog_delete(request):
-    return HttpResponse("Hello, world. You're at the blog_delete index.")
