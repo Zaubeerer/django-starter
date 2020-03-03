@@ -8,8 +8,7 @@ from django.http import HttpResponse
 
 
 def blog_list(request):
-    return HttpResponse("Hello, world. You're at the blog_list index.")
-
+    return render(request, "blog/list.html")
 
 def blog_detail(request):
     return HttpResponse("Hello, world. You're at the blog_detail index.")
