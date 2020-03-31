@@ -50,6 +50,9 @@ def blog_new(request):
             message = form.save(commit=False)
             message.log_date = datetime.now()
             message.save()
+            message.success(request, "Added post")
+            return redirect("blog:blog_list")
+
     else:
         return render(request, "blog/blog_new.html", {"form": form})
 
