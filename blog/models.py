@@ -13,4 +13,4 @@ class Blog(models.Model):
         return self.slug
 
     class Meta:
-        ordering = ['-added']
+        ordering = ["-added"]

@@ -1,13 +1,15 @@
 {% extends "blog/layout.html" %}
 
 {% block title %}
-    About
+    {{ post.title }}
 {% endblock %}
 
 {% block content %}
 
-<h2>About</h2>
+<h2>{{ post.title }}</h2>
 
-<p>Energy data scientist and free athlete :)</p>
+<img src="{{ post.cover }}">
+
+<p>{{ post.post }}</p>
 
 {% endblock %}

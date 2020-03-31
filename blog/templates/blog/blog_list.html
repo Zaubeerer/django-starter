@@ -8,22 +8,20 @@
 
 <h2>List of Blogs</h2>
 
-{% if message_list %}
-    <table class="message_list">
+{% if blog_list %}
+    <table class="blog_list">
         <thead>
         <tr>
             <th>Date</th>
-            <th>Time</th>
-            <th>Message</th>
+            <th>Blog title</th>
         </tr>
         </thead>
         <tbody>
         {% for blog in blog_list %}
             <tr>
                 <td>{{ blog.added | date:'d M Y' }}</td>
-                <td>{{ blog.added | time:'H:i:s' }}</td>
                 <td>
-                    {{ blog.message }}
+                    <a href="{{ blog.id }}">{{ blog.title }}</a> 
                 </td>
             </tr>
         {% endfor %}
