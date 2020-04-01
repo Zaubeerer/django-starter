@@ -57,8 +57,15 @@ def blog_new(request):
         return render(request, "blog/blog_new.html", {"form": form})
 
 
-def blog_edit(request):
-    pass
+def blog_edit(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+
+    form = BlogForm(request.POST or None, instance=post)
+
+    if form.is_valid():
+        form.save()
+        messages.success(request, "Edited post")
+        return redirect("blog:blog_list")
 
 
 def blog_delete(request):
