@@ -14,5 +14,5 @@ urlpatterns = [
     path("<int:pk>", views.blog_detail, name="blog_detail"),
     path("new", views.blog_new, name="blog_new"),
     path("edit/<int:pk>", views.blog_edit, name="blog_edit"),
-    # path("delete/<int:pk>", views.blog_delete, name="blog_delete"),
+    path("delete/<int:pk>", views.blog_delete, name="blog_delete"),
 ]

@@ -14,6 +14,7 @@
         <tr>
             <th>Date</th>
             <th>Blog title</th>
+            <th>Edit</th>
         </tr>
         </thead>
         <tbody>
@@ -22,6 +23,9 @@
                 <td>{{ blog.added | date:'d M Y' }}</td>
                 <td>
                     <a href="{{ blog.id }}">{{ blog.title }}</a> 
+                </td>
+                <td>
+                    <a href="edit/{{ blog.id }}">Edit</a> 
                 </td>
             </tr>
         {% endfor %}

@@ -67,6 +67,15 @@ def blog_edit(request, pk):
         messages.success(request, "Edited post")
         return redirect("blog:blog_list")
 
+    return render(request, "blog/form.html", {"post": post, "form": form})
 
-def blog_delete(request):
-    pass
+
+def blog_delete(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+
+    if request.method == "POST":
+        post.delete()
+        messages.success(request, "Deleted post")
+        return redirect("blog:blog_list")
+
+    return render(request, "blog/delete.html", {"post": post})
